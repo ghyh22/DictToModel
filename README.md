@@ -11,7 +11,7 @@
  3. 不能对常量赋值，不然会丢弃掉.
  
  # GHKVCModel类:
- 1. 使用GHDictToModel需要继承本类
+ 1. 要使用GHDictToModel工具类,实现字典转model必须继承本类
  2. required override init()
     子类必须实现的构造方法
  3. func subModelTypes<T:GHKVCModel>()->[String:T.Type]
