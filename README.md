@@ -1,5 +1,9 @@
 # DictToModel
 字典转model工具,也包含了一个model转json工具类
+    let dict:[String:Any] = [...]
+    let kvcModel = TestModel()
+    GHDictToModel.kvcModel(dict: dict, model: kvcModel)
+    print(kvcModel.toJSON())
 # 使用本工具类的目的:
  1. 防止一些简单的赋值时因类型不统一而产生崩溃;
  2. 防止访问空值产生崩溃;
