@@ -369,7 +369,7 @@ class GHDictToModel: NSObject {
     }
     /**
      处理对象类型Array属性:
-     1. 对象类型必须是GHKVCModel的子类
+     对象类型必须是GHKVCModel的子类
     */
     func handleObjectArray<T:GHKVCModel>(prop:String, arrayType:T.Type) {
         var key = prop

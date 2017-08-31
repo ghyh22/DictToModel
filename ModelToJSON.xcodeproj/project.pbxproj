@@ -20,6 +20,7 @@
 		039D673F1F4ED1D70046180C /* HLSVideoInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D673C1F4ED1D70046180C /* HLSVideoInfoModel.swift */; };
 		039D67401F4ED1D70046180C /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D673D1F4ED1D70046180C /* RouteInfo.swift */; };
 		039D674B1F5021B60046180C /* DictToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D674A1F5021B60046180C /* DictToModel.swift */; };
+		039F6CE21F580297001798A4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 039F6CE11F580297001798A4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		039D673C1F4ED1D70046180C /* HLSVideoInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSVideoInfoModel.swift; sourceTree = "<group>"; };
 		039D673D1F4ED1D70046180C /* RouteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		039D674A1F5021B60046180C /* DictToModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictToModel.swift; sourceTree = "<group>"; };
+		039F6CE11F580297001798A4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				039D66E01F4EB46F0046180C /* ModelToJSONTests */,
 				039D66EB1F4EB46F0046180C /* ModelToJSONUITests */,
 				039D66CA1F4EB46F0046180C /* Products */,
+				039F6CE11F580297001798A4 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,6 +297,7 @@
 				039D67391F4ECB930046180C /* ModelToJSON.swift in Sources */,
 				039D673E1F4ED1D70046180C /* ClearInfo.swift in Sources */,
 				039D67401F4ED1D70046180C /* RouteInfo.swift in Sources */,
+				039F6CE21F580297001798A4 /* README.md in Sources */,
 				039D66CF1F4EB46F0046180C /* ViewController.swift in Sources */,
 				039D66CD1F4EB46F0046180C /* AppDelegate.swift in Sources */,
 			);
