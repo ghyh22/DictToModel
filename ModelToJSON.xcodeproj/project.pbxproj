@@ -14,6 +14,12 @@
 		039D66D71F4EB46F0046180C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039D66D51F4EB46F0046180C /* LaunchScreen.storyboard */; };
 		039D66E21F4EB46F0046180C /* ModelToJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D66E11F4EB46F0046180C /* ModelToJSONTests.swift */; };
 		039D66ED1F4EB46F0046180C /* ModelToJSONUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D66EC1F4EB46F0046180C /* ModelToJSONUITests.swift */; };
+		039D66FB1F4EB4A00046180C /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D66FA1F4EB4A00046180C /* TestModel.swift */; };
+		039D67391F4ECB930046180C /* ModelToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D67381F4ECB930046180C /* ModelToJSON.swift */; };
+		039D673E1F4ED1D70046180C /* ClearInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D673B1F4ED1D70046180C /* ClearInfo.swift */; };
+		039D673F1F4ED1D70046180C /* HLSVideoInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D673C1F4ED1D70046180C /* HLSVideoInfoModel.swift */; };
+		039D67401F4ED1D70046180C /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D673D1F4ED1D70046180C /* RouteInfo.swift */; };
+		039D674B1F5021B60046180C /* DictToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D674A1F5021B60046180C /* DictToModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		039D66E81F4EB46F0046180C /* ModelToJSONUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelToJSONUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		039D66EC1F4EB46F0046180C /* ModelToJSONUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelToJSONUITests.swift; sourceTree = "<group>"; };
 		039D66EE1F4EB46F0046180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		039D66FA1F4EB4A00046180C /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		039D67381F4ECB930046180C /* ModelToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelToJSON.swift; sourceTree = "<group>"; };
+		039D673B1F4ED1D70046180C /* ClearInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearInfo.swift; sourceTree = "<group>"; };
+		039D673C1F4ED1D70046180C /* HLSVideoInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSVideoInfoModel.swift; sourceTree = "<group>"; };
+		039D673D1F4ED1D70046180C /* RouteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
+		039D674A1F5021B60046180C /* DictToModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictToModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,16 @@
 		039D66CB1F4EB46F0046180C /* ModelToJSON */ = {
 			isa = PBXGroup;
 			children = (
+				039D673A1F4ED1D70046180C /* models */,
 				039D66CC1F4EB46F0046180C /* AppDelegate.swift */,
 				039D66CE1F4EB46F0046180C /* ViewController.swift */,
 				039D66D01F4EB46F0046180C /* Main.storyboard */,
 				039D66D31F4EB46F0046180C /* Assets.xcassets */,
 				039D66D51F4EB46F0046180C /* LaunchScreen.storyboard */,
 				039D66D81F4EB46F0046180C /* Info.plist */,
+				039D66FA1F4EB4A00046180C /* TestModel.swift */,
+				039D67381F4ECB930046180C /* ModelToJSON.swift */,
+				039D674A1F5021B60046180C /* DictToModel.swift */,
 			);
 			path = ModelToJSON;
 			sourceTree = "<group>";
@@ -123,6 +139,16 @@
 				039D66EE1F4EB46F0046180C /* Info.plist */,
 			);
 			path = ModelToJSONUITests;
+			sourceTree = "<group>";
+		};
+		039D673A1F4ED1D70046180C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				039D673B1F4ED1D70046180C /* ClearInfo.swift */,
+				039D673C1F4ED1D70046180C /* HLSVideoInfoModel.swift */,
+				039D673D1F4ED1D70046180C /* RouteInfo.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039D674B1F5021B60046180C /* DictToModel.swift in Sources */,
+				039D66FB1F4EB4A00046180C /* TestModel.swift in Sources */,
+				039D673F1F4ED1D70046180C /* HLSVideoInfoModel.swift in Sources */,
+				039D67391F4ECB930046180C /* ModelToJSON.swift in Sources */,
+				039D673E1F4ED1D70046180C /* ClearInfo.swift in Sources */,
+				039D67401F4ED1D70046180C /* RouteInfo.swift in Sources */,
 				039D66CF1F4EB46F0046180C /* ViewController.swift in Sources */,
 				039D66CD1F4EB46F0046180C /* AppDelegate.swift in Sources */,
 			);
@@ -419,6 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4DDY242R68;
 				INFOPLIST_FILE = ModelToJSON/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gonghao.ModelToJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4DDY242R68;
 				INFOPLIST_FILE = ModelToJSON/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gonghao.ModelToJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +550,7 @@
 				039D66F31F4EB46F0046180C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		039D66F41F4EB46F0046180C /* Build configuration list for PBXNativeTarget "ModelToJSONTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +559,7 @@
 				039D66F61F4EB46F0046180C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		039D66F71F4EB46F0046180C /* Build configuration list for PBXNativeTarget "ModelToJSONUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +568,7 @@
 				039D66F91F4EB46F0046180C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
