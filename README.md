@@ -1,6 +1,6 @@
 # DictToModel
 字典转model工具,也包含了一个model转json工具类
-```
+```swift
     let dict:[String:Any] = [...]
     let kvcModel = TestModel()
     //将字典转为model
