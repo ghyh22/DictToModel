@@ -8,6 +8,15 @@
     //
     print(kvcModel.toJSON())
 ```
+或者
+```swift
+    let dict:[String:Any] = [...]
+    let kvcModel = TestModel()
+    //将字典转为model
+    kvcModel.dictToModel(dict: dict)
+    //
+    print(kvcModel.toJSON())
+```
 # 使用本工具类的目的:
  1. 防止一些简单的赋值时因类型不统一而产生崩溃;
  2. 防止访问空值产生崩溃;
