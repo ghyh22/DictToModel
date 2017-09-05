@@ -25,7 +25,8 @@ class ViewController: UIViewController {
             "subModel":["constBool":false, "varBool":true, "optionalBool":true, "numberToBool":4.4, "zeroToBool":0, "trueStrToBool":"true","falseStrToBool":"false", "otherStrToBool": "123","otherObjectToBool":["gii"]],
             "other_key_name": "400.0"]
         let kvcModel = TestModel()
-        GHDictToModel.kvcModel(dict: dict, model: kvcModel)
+//        GHDictToModel.kvcModel(dict: dict, model: kvcModel)
+        kvcModel.dictToModel(dict: dict)
         print(kvcModel.toJSON())
         
 //        testArrayModel()

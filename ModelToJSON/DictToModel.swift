@@ -41,6 +41,13 @@ class GHKVCModel: NSObject {
     override func value(forUndefinedKey key: String) -> Any? {
         return nil
     }
+    
+    /// 字典转model
+    ///
+    /// - Parameter dict:
+    func dictToModel(dict:[String:Any]) {
+        GHDictToModel.kvcModel(dict: dict, model: self)
+    }
 }
 /**
  * 使用DictToModel将字典转成model的条件:
