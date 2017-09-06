@@ -112,11 +112,15 @@ class GHDictToModel: NSObject {
         if let index = unsettingProps.index(of: "_forUndefinedHandle") {
             unsettingProps.remove(at: index)
         }
-        print("-----------------------------------------------------------------")
-        print("\(type(of: model))中未处理的属性:", unsettingProps)
-        print("\(type(of: model))对应的字典未处理的key:")
-        for item in self.dictKeys {
-            print(item, ":", self.dict[item] as Any)
+        print("----------------------KVC----------------------------------------")
+        if unsettingProps.count > 0 {
+            print("\(type(of: model))中未处理的属性:", unsettingProps)
+        }
+        if dictKeys.count > 0 {
+            print("\(type(of: model))对应的字典未处理的key:")
+            for item in self.dictKeys {
+                print(item, ":", self.dict[item] as Any)
+            }
         }
         print("-----------------------------------------------------------------\n")
     }
