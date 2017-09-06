@@ -69,5 +69,5 @@
      字典对应的key值也只能是数值型数组，否则将不做处理
  9. 如果属性是字典型数组[[String:Any]]，并且key也是字典型数组[[String:Any]]，直接赋值
  10. 处理对象类型Array属性:对象类型必须是GHKVCModel的子类
- 11. 属性是字典类型:统一只处理[String:Any]型字典,其它类型字典将不做处理
+ 11. 属性是字典类型:统一只处理[String:Any],[String:NSNumber],[String:String],[String:Bool]型字典,其它类型字典将不做处理
  12. 处理子model属性，对应的key值必须是[String:Any]类型，否则将不做处理

@@ -151,6 +151,12 @@ class GHDictToModel: NSObject {
             handleDictArray(prop: prop)
         }else if mirror.subjectType == [String:Any].self || mirror.subjectType == Optional<[String:Any]>.self {
             handleDict(prop: prop)
+        }else if mirror.subjectType == [String:NSNumber].self || mirror.subjectType == Optional<[String:NSNumber]>.self{
+            handleNumberDict(prop: prop)
+        }else if mirror.subjectType == [String:String].self || mirror.subjectType == Optional<[String:String]>.self{
+            handleStringDict(prop: prop)
+        }else if mirror.subjectType == [String:Bool].self || mirror.subjectType == Optional<[String:Bool]>.self{
+            handleBoolDict(prop: prop)
         }else{
             unsettingProps.append(prop)
         }
@@ -410,6 +416,54 @@ class GHDictToModel: NSObject {
         }
         let dictValue = dict[key]
         if let keyValue = dictValue as? [String:Any] {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+            return
+        }
+        unsettingProps.append(prop)
+    }
+    /**
+     统一只处理[String:NSNumber]型字典,其它类型字典直接丢弃
+     */
+    func handleNumberDict(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue as? [String:NSNumber] {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+            return
+        }
+        unsettingProps.append(prop)
+    }
+    /**
+     统一只处理[String:String]型字典,其它类型字典直接丢弃
+     */
+    func handleStringDict(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue as? [String:String] {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+            return
+        }
+        unsettingProps.append(prop)
+    }
+    /**
+     统一只处理[String:Bool]型字典,其它类型字典直接丢弃
+     */
+    func handleBoolDict(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue as? [String:Bool] {
             self.removeDictKey(key: key)
             model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
             return
