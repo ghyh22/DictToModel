@@ -39,7 +39,13 @@ class GHModelToJSON: NSObject {
                 for item in list {
                     if let prop = item.label {
                         if let value = handleValue(value: item.value) {
-                            dict[prop] = value
+                            var key = prop
+                            if let kvcModel = model as? GHKVCModel {
+                                if let tmp = kvcModel.modelPropDictKeyMap()[prop] {
+                                    key = tmp
+                                }
+                            }
+                            dict[key] = value
                         }
                     }
                 }
