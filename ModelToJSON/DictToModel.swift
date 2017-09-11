@@ -369,7 +369,7 @@ class GHDictToModel: NSObject {
         }
     }
     /**
-     如果属性是字典型数组，并且key也是字典型数组，直接赋值
+     如果属性是字典型数组[[String:Any]]，并且key也是字典型数组[[String:Any]]，直接赋值
     */
     func handleDictArray(prop:String) {
         var key = prop
@@ -386,7 +386,7 @@ class GHDictToModel: NSObject {
     }
     /**
      处理对象类型Array属性:
-     对象类型必须是GHKVCModel的子类
+     对象类型必须是GHKVCModel的子类,且数组必须是[[String:Any]]类型
     */
     func handleObjectArray<T:GHKVCModel>(prop:String, arrayType:T.Type) {
         var key = prop
