@@ -153,6 +153,8 @@ class GHDictToModel: NSObject {
             handleNumberArray(prop: prop)
         }else if mirror.subjectType == Array<String>.self || mirror.subjectType == Optional<Array<String>>.self {
             handleStringArray(prop: prop)
+        }else if mirror.subjectType == Array<Bool>.self || mirror.subjectType == Optional<Array<Bool>>.self {
+            handleBoolArray(prop: prop)
         }else if mirror.subjectType == Array<Any>.self || mirror.subjectType == Optional<Array<Any>>.self {
             handleAnyArray(prop: prop)
         }else if mirror.subjectType == [[String:Any]].self || mirror.subjectType == Optional<[[String:Any]]>.self {
@@ -383,6 +385,23 @@ class GHDictToModel: NSObject {
         }
         let dictValue = dict[key]
         if let keyValue = dictValue as? [String] {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+        }else{
+            unsettingProps.append(prop)
+        }
+    }
+    /**
+     处理Bool型数组属性:
+     字典对应的key值也只能是Bool型数组，否则被丢弃
+     */
+    func handleBoolArray(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue as? [Bool] {
             self.removeDictKey(key: key)
             model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
         }else{

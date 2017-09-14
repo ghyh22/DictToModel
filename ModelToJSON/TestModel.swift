@@ -65,6 +65,9 @@ class TestModel: BaseModel {
     var intToDoubleArray:[Double]?
     var optionalUIntArray:[UInt]?
     var optionalInt8Array:[Int8]?
+    var optionalStringArray:[String]?
+    var optionalBoolArray:[Bool]?
+    var optionalAnyArray:[Any]?
     var otherObjectArray:[StringModel]?
     var dictArray:[[String:Any]]?
     var dict:[String:Any]?
