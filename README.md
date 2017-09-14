@@ -61,13 +61,7 @@
  5. 处理UInt型数组属性:
      - 字典对应的key值也只能是数值型数组，否则将不做处理
      - 浮点型数值会转化成UInt整型
- 6. 处理float型数组属性:
-     字典对应的key值也只能是数值型数组，否则将不做处理
- 7. 处理double型数组属性:
-     字典对应的key值也只能是数值型数组，否则将不做处理
- 8. 处理NSNumber型数组属性:
-     字典对应的key值也只能是数值型数组，否则将不做处理
- 9. 如果属性是字典型数组[[String:Any]]，并且key也是字典型数组[[String:Any]]，直接赋值
- 10. 处理对象类型Array属性:对象类型必须是GHKVCModel的子类
- 11. 属性是字典类型:统一只处理[String:Any],[String:NSNumber],[String:String],[String:Bool]型字典,其它类型字典将不做处理
- 12. 处理子model属性，对应的key值必须是[String:Any]类型，否则将不做处理
+ 6. 处理对象类型数组属性:对象类型必须是GHKVCModel的子类对象
+ 7. 还支持的数组类型:[Float],[double],[NSNumber],[String],[Any],[[String:Any]]
+ 8. 属性是字典类型:统一只处理[String:Any],[String:NSNumber],[String:String],[String:Bool]型字典,其它类型字典将不做处理
+ 9. 处理子model属性，对应的key值必须是[String:Any]类型，否则将不做处理

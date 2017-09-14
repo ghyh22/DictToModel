@@ -149,8 +149,12 @@ class GHDictToModel: NSObject {
             handleFloatArray(prop: prop)
         }else if mirror.subjectType == Array<Double>.self || mirror.subjectType == Optional<Array<Double>>.self {
             handleDoubleArray(prop: prop)
-        }else if mirror.subjectType == Array<NSNumber>.self || mirror.subjectType == Optional<Array<NSNumber>>.self {
+        }else if mirror.subjectType == Array<NSNumber>.self || mirror.subjectType == Optional<[NSNumber]>.self {
             handleNumberArray(prop: prop)
+        }else if mirror.subjectType == Array<String>.self || mirror.subjectType == Optional<Array<String>>.self {
+            handleStringArray(prop: prop)
+        }else if mirror.subjectType == Array<Any>.self || mirror.subjectType == Optional<Array<Any>>.self {
+            handleAnyArray(prop: prop)
         }else if mirror.subjectType == [[String:Any]].self || mirror.subjectType == Optional<[[String:Any]]>.self {
             handleDictArray(prop: prop)
         }else if mirror.subjectType == [String:Any].self || mirror.subjectType == Optional<[String:Any]>.self {
@@ -362,6 +366,40 @@ class GHDictToModel: NSObject {
         }
         let dictValue = dict[key]
         if let keyValue = dictValue as? [NSNumber] {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+        }else{
+            unsettingProps.append(prop)
+        }
+    }
+    /**
+     处理String型数组属性:
+     字典对应的key值也只能是String型数组，否则被丢弃
+     */
+    func handleStringArray(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue as? [String] {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+        }else{
+            unsettingProps.append(prop)
+        }
+    }
+    /**
+     处理类型混合(Any)型数组属性:
+     字典对应的key值也只能是类型混合(Any)型数组，否则被丢弃
+     */
+    func handleAnyArray(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue as? [Any] {
             self.removeDictKey(key: key)
             model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
         }else{
