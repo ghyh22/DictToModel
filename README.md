@@ -65,3 +65,4 @@
  7. 还支持的数组类型:[Float],[double],[NSNumber],[String],[Bool],[Any],[[String:Any]]
  8. 属性是字典类型:统一只处理[String:Any],[String:NSNumber],[String:String],[String:Bool]型字典,其它类型字典将不做处理
  9. 处理子model属性，对应的key值必须是[String:Any]类型，否则将不做处理
+ 10. 最后如果属性被定义为Any?类型(接收任何类型的值),那么只要字典中能找到对应的key值则直接赋值

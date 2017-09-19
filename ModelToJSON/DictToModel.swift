@@ -167,6 +167,8 @@ class GHDictToModel: NSObject {
             handleStringDict(prop: prop)
         }else if mirror.subjectType == [String:Bool].self || mirror.subjectType == Optional<[String:Bool]>.self{
             handleBoolDict(prop: prop)
+        }else if mirror.subjectType == Any.self || mirror.subjectType == Optional<Any>.self{
+            handleAny(prop: prop)
         }else{
             unsettingProps.append(prop)
         }
@@ -545,6 +547,22 @@ class GHDictToModel: NSObject {
             GHDictToModel.kvcModel(dict: keyValue, model: tmpModel)
             self.removeDictKey(key: key)
             model.setValue(value: tmpModel, key: prop, forUndefinedHandle: forUndefinedKey(key:))
+            return
+        }
+        unsettingProps.append(prop)
+    }
+    /**
+     处理子Any类型属性
+    */
+    func handleAny(prop:String) {
+        var key = prop
+        if let tmp = model.modelPropDictKeyMap()[prop] {
+            key = tmp
+        }
+        let dictValue = dict[key]
+        if let keyValue = dictValue {
+            self.removeDictKey(key: key)
+            model.setValue(value: keyValue, key: prop, forUndefinedHandle: forUndefinedKey(key:))
             return
         }
         unsettingProps.append(prop)

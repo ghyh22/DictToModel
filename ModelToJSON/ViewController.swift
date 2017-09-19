@@ -23,7 +23,9 @@ class ViewController: UIViewController {
             "dictArray":[["name":"aaa", "id:":3], ["name":"bbb", "age":30]],
             "dict":["name":"gggg", "id": 123, "ie": false],
             "subModel":["constBool":false, "varBool":true, "optionalBool":true, "numberToBool":4.4, "zeroToBool":0, "trueStrToBool":"true","falseStrToBool":"false", "otherStrToBool": "123","otherObjectToBool":["gii"]],
-            "other_key_name": "400.0"]
+            "other_key_name": "400.0",
+            "anyInt":33, "anyString":"any string", "anyBool":true, "anyDict":["key":123, "fff":false], "anyModel":["123"]
+        ]
         let kvcModel = TestModel()
 //        GHDictToModel.kvcModel(dict: dict, model: kvcModel)
         kvcModel.dictToModel(dict: dict)

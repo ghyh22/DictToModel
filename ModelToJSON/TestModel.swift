@@ -75,6 +75,11 @@ class TestModel: BaseModel {
     var stringModel:StringModel?
     
     var otherKeyName = 4
+    var anyInt:Any?
+    var anyString:Any?
+    var anyBool:Any?
+    var anyDict:Any?
+    var anyModel:Any?
     
     override func subModelTypes<T>() -> [String : T.Type] where T : GHKVCModel {
         return ["otherObjectArray":StringModel.self, "subModel":BoolModel.self, "stringModel":BoolModel.self] as! [String : T.Type]
