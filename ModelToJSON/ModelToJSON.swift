@@ -10,15 +10,23 @@ import UIKit
 
 class GHModelToJSON: NSObject {
     
-    static func handle(model:NSObject)->String{
+    /// model转JSON
+    ///
+    /// - Parameters:
+    ///   - model:
+    ///   - surpportGHKVC: 是否支持GHKVCModel中的属性名称映射表(modelPropDictKeyMap),默认false不支持
+    /// - Returns:
+    static func handle(model:NSObject, surpportGHKVC:Bool = false)->String{
         let mtj = GHModelToJSON(model: model)
         return mtj.json
     }
     
     let model:NSObject
+    var surpportGHKVC:Bool = false
     var json:String = ""
-    init(model:NSObject) {
+    init(model:NSObject, surpportGHKVC:Bool = false) {
         self.model = model
+        self.surpportGHKVC = surpportGHKVC
         super.init()
         let dict = handleModel(model: model)
         do{
@@ -40,9 +48,11 @@ class GHModelToJSON: NSObject {
                     if let prop = item.label {
                         if let value = handleValue(value: item.value) {
                             var key = prop
-                            if let kvcModel = model as? GHKVCModel {
-                                if let tmp = kvcModel.modelPropDictKeyMap()[prop] {
-                                    key = tmp
+                            if self.surpportGHKVC {
+                                if let kvcModel = model as? GHKVCModel {
+                                    if let tmp = kvcModel.modelPropDictKeyMap()[prop] {
+                                        key = tmp
+                                    }
                                 }
                             }
                             dict[key] = value
@@ -92,7 +102,7 @@ class GHModelToJSON: NSObject {
 
 /// NSObject 扩展输出json串
 extension NSObject{
-    func toJSON() -> String {
-        return GHModelToJSON.handle(model: self)
+    func toJSON(surpportGHKVC:Bool = false) -> String {
+        return GHModelToJSON.handle(model: self, surpportGHKVC: surpportGHKVC)
     }
 }
