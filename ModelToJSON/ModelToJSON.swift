@@ -17,7 +17,7 @@ class GHModelToJSON: NSObject {
     ///   - surpportGHKVC: 是否支持GHKVCModel中的属性名称映射表(modelPropDictKeyMap),默认false不支持
     /// - Returns:
     static func handle(model:NSObject, surpportGHKVC:Bool = false)->String{
-        let mtj = GHModelToJSON(model: model)
+        let mtj = GHModelToJSON(model: model, surpportGHKVC: surpportGHKVC)
         return mtj.json
     }
     
