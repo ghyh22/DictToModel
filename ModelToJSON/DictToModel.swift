@@ -41,6 +41,9 @@ class GHKVCModel: NSObject {
     override func value(forUndefinedKey key: String) -> Any? {
         return nil
     }
+    func gc() {
+        self._forUndefinedHandle = nil
+    }
     
     /// 字典转model
     ///
@@ -172,6 +175,7 @@ class GHDictToModel: NSObject {
         }else{
             unsettingProps.append(prop)
         }
+        model.gc()
     }
     
     fileprivate var unsettingProps:[String] = []
