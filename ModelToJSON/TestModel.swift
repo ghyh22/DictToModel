@@ -66,6 +66,7 @@ class TestModel: BaseModel {
     var optionalUIntArray:[UInt]?
     var optionalInt8Array:[Int8]?
     var optionalStringArray:[String]?
+    var optionalNSStringArray:[NSString]?
     var optionalBoolArray:[Bool]?
     var optionalAnyArray:[Any]?
     var otherObjectArray:[StringModel]?
