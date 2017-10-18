@@ -26,6 +26,7 @@
  1. model以及model中包含的子model都必须继承GHKVCModel类
  2. 目前有些基本类型的可选类型(已知的有Int?,Float?,Double?,Bool?等)属性,没法通过setValue的方式给属性赋值.建议不使用这些数值的可选类型.
  3. 不能对常量赋值，常量属性将不做处理.
+ 4. 如果要在framework中使用，请在属性定义的前面加上"@objc",例如:"@objc var name:Int = 0"
  
  # GHKVCModel类:
  1. model要使用GHDictToModel工具类,实现字典转model必须继承本类
